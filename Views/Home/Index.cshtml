@@ -1,0 +1,192 @@
+﻿@{
+    var pageTitle = "Home Page";
+}
+
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>@pageTitle</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+            header h1 {
+                margin: 0;
+            }
+
+        nav {
+            background-color: #444;
+            color: #fff;
+            padding: 10px 0;
+            text-align: center;
+        }
+
+            nav ul {
+                list-style: none;
+                padding: 0;
+            }
+
+                nav ul li {
+                    display: inline;
+                    margin: 0 10px;
+                }
+
+                    nav ul li a {
+                        color: #fff;
+                        text-decoration: none;
+                    }
+
+        .container {
+            width: 80%;
+            margin: 20px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero {
+            text-align: center;
+            padding: 50px 0;
+        }
+
+            .hero h1 {
+                margin: 0;
+            }
+
+            .hero p {
+                font-size: 18px;
+                margin-top: 10px;
+                color: #666;
+            }
+
+        .cta-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+            .cta-btn:hover {
+                background-color: #555;
+            }
+
+        .features {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .feature-item {
+            margin-bottom: 30px;
+        }
+
+            .feature-item i {
+                font-size: 36px;
+                margin-bottom: 10px;
+                display: block;
+            }
+
+            .feature-item h3 {
+                margin: 0;
+            }
+
+            .feature-item p {
+                color: #666;
+            }
+
+        footer {
+            background-color: #444;
+            color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+
+            footer p {
+                margin: 0;
+            }
+
+        .social-icons {
+            list-style: none;
+            padding: 0;
+            margin-top: 10px;
+        }
+
+            .social-icons li {
+                display: inline;
+                margin: 0 10px;
+            }
+
+                .social-icons li a {
+                    color: #fff;
+                    font-size: 20px;
+                    text-decoration: none;
+                    transition: color 0.3s ease;
+                }
+
+                    .social-icons li a:hover {
+                        color: #ccc;
+                    }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Welcome to Our Website</h1>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="#">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Services</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <section class="hero">
+            <h1>Welcome to Our Website</h1>
+            <p>Discover the amazing things we have to offer. Learn more about building Web apps with ASP.NET Core.</p>
+            <a href="#" class="cta-btn">Get Started</a>
+        </section>
+
+        <section class="features">
+            <div class="feature-item">
+                <i class="fa fa-code"></i>
+                <h3>Powerful Technologies</h3>
+                <p>Our website is built using the latest technologies to ensure performance and reliability.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fa fa-mobile-alt"></i>
+                <h3>Responsive Design</h3>
+                <p>Enjoy a seamless experience on any device with our responsive design.</p>
+            </div>
+            <div class="feature-item">
+                <i class="fa fa-cogs"></i>
+                <h3>Customizable</h3>
+                <p>Customize and personalize your experience to suit your needs.</p>
+            </div>
+        </section>
+    </div>
+
+
+</body>
+

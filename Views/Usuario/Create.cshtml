@@ -1,0 +1,98 @@
+﻿@model ProjetoApi.Models.Usuario
+
+@{
+    ViewData["Title"] = "Criar Novo Usuário";
+}
+
+<h1 class="page-title">@ViewData["Title"]</h1>
+
+
+    <div class="row">
+        <div class="col-md-6boffset-md-3">
+            <h4>Usuário</h4>
+            <hr class="form-divider"/>
+            <form asp-action="Create" class="form-container">
+                <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+                <div class="form-group">
+                    <label asp-for="UsuarioNome" class="control-label">Nome</label>
+                    <input asp-for="UsuarioNome" class="form-control" />
+                    <span asp-validation-for="UsuarioNome" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="UsuarioEmail" class="control-label">Email</label>
+                    <input asp-for="UsuarioEmail" class="form-control" />
+                    <span asp-validation-for="UsuarioEmail" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="UsuarioTelefone" class="control-label">Telefone</label>
+                    <input asp-for="UsuarioTelefone" class="form-control" />
+                    <span asp-validation-for="UsuarioTelefone" class="text-danger"></span>
+                </div>
+                <div class="form-group">
+                    <label asp-for="UsuarioSenha" class="control-label">Senha</label>
+                    <input asp-for="UsuarioSenha" class="form-control" />
+                    <span asp-validation-for="UsuarioSenha" class="text-danger"></span>
+                </div>
+            <div class="form-group text-center">
+                <button type="submit" class="btn btn-primary btn-create">Criar</button>
+            </div>
+            <div class="action-links">
+                <a asp-action="Index" class="btn btn-secondary">Voltar para a lista</a>
+            </div>
+            </form>
+        </div>
+    </div>
+
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+<style>
+    .page-title {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 2em;
+        color: #007bff;
+    }
+
+    .form-title {
+        text-align: center;
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        color: #555;
+    }
+    .btn-secondary {
+        width: 100%
+    }
+    .form-group {
+        margin-bottom: 20px;
+    }
+    .form-divider {
+        margin-bottom: 20px;
+    }
+
+    .form-container {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    .control-label {
+        font-weight: bold;
+    }
+
+    .btn-primary {
+        width: 100%;
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+        }
+</style>

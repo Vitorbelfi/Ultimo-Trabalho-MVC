@@ -1,0 +1,120 @@
+﻿@model IEnumerable<ProjetoApi.Models.Animais>
+
+@{
+    ViewData["Title"] = "Lista de Animais";
+}
+
+<h1 class="page-title">@ViewData["Title"]</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <a class="btn btn-primary mb-3" asp-action="Create">Criar um novo Animal</a>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Raça</th>
+                        <th>Tipo</th>
+                        <th>Cor</th>
+                        <th>Sexo</th>
+                        <th>Foto</th>
+                        <th>Data Desaparecimento</th>
+                        <th>Data Encontro</th>
+                        <th>Status</th>
+                        <th>Usuário</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.AnimalNome)</td>
+                            <td>@Html.DisplayFor(modelItem => item.AnimalRaca)</td>
+                            <td>@Html.DisplayFor(modelItem => item.AnimalTipo)</td>
+                            <td>@Html.DisplayFor(modelItem => item.AnimalCor)</td>
+                            <td>@Html.DisplayFor(modelItem => item.AnimalSexo)</td>
+                            <td>@Html.DisplayFor(modelItem => item.AnimalFoto)</td>
+                            <td>@Html.DisplayFor(modelItem => item.AnimalDtDesaparecimento)</td>
+                            <td>@Html.DisplayFor(modelItem => item.AnimalDtEncontro)</td>
+                            <td>@Html.DisplayFor(modelItem => item.AnimalStatus)</td>
+                            <td>@Html.DisplayFor(modelItem => item.Usuario.UsuarioNome)</td>
+                            <td>
+                                <a class="btn btn-sm btn-info" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                                <a class="btn btn-sm btn-secondary" asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+                                <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.Id">Deletar</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<style>
+    .page-title {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 2em;
+        color: #007bff;
+    }
+
+    .btn-primary {
+        margin-left:550px;
+        background-color: #007bff;
+        border-color: #007bff;
+        color: white;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+            color:white;
+        }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border-color: #6c757d;
+    }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+            border-color: #545b62;
+        }
+
+    .btn-danger {
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
+
+    .btn-info {
+        background-color: #007bff;
+        border-color: #007bff;
+        color: white;
+    }
+
+        .btn-info:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+            color: white;
+        }
+
+    .table {
+        width: 100%;
+        margin: auto;
+        margin-bottom: 20px;
+        border-collapse: collapse;
+    }
+
+        .table th, .table td {
+            text-align: center;
+            padding: 10px;
+        }
+</style>

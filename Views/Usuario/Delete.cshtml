@@ -1,0 +1,119 @@
+﻿@model ProjetoApi.Models.Usuario
+
+@{
+    ViewData["Title"] = "Excluir Usuário";
+}
+
+<h1 class="page-title">@ViewData["Title"]</h1>
+
+<div class="confirmation-container">
+    <h3 class="text-center">Tem certeza que deseja excluir este Usuário?</h3>  
+            <h4 class="form-title">Usuário</h4>
+            <hr class="form-divider" />
+            <dl class="row detail-list">
+            <dt class="col-sm-2 detail-label">
+                    @Html.DisplayNameFor(model => model.UsuarioNome)
+                </dt>
+            <dd class="col-sm-10 detail-value">
+                    @Html.DisplayFor(model => model.UsuarioNome)
+                </dd>
+            <dt class="col-sm-2 detail-label">
+                    @Html.DisplayNameFor(model => model.UsuarioEmail)
+                </dt>
+            <dd class="col-sm-10 detail-value">
+                    @Html.DisplayFor(model => model.UsuarioEmail)
+                </dd>
+            <dt class="col-sm-2 detail-label">
+                    @Html.DisplayNameFor(model => model.UsuarioTelefone)
+                </dt>
+            <dd class="col-sm-10 detail-value">
+                    @Html.DisplayFor(model => model.UsuarioTelefone)
+                </dd>
+            <dt class="col-sm-2 detail-label">
+                    @Html.DisplayNameFor(model => model.UsuarioSenha)
+                </dt>
+            <dd class="col-sm-10 detail-value">
+                    @Html.DisplayFor(model => model.UsuarioSenha)
+                </dd>
+            </dl>
+            <div class="text-center">
+        <form asp-action="Delete" class="form-group">
+            <input type="hidden" asp-for="Id" />
+            <button type="submit" class="btn btn-danger">Excluir</button>
+            <a asp-action="Index" class="btn btn-secondary">Voltar para a lista</a>
+        </form>
+    </div>
+</div>
+
+<style>
+    .page-title {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 2em;
+        color: #dc3545;
+    }
+
+    .btn-danger {
+        width: 100%;
+        background-color: #dc3545;
+        color: #fff;
+    }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+        }
+
+    .btn-secondary {
+        margin-top: 10px;
+        width: 100%;
+        background-color: #6c757d;
+        color: #fff;
+    }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+
+    .text-center {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+.confirmation-container {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: auto;
+        width: 60%;
+    }
+
+    .form-title {
+        text-align: center;
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        color: #555;
+    }
+
+    .form-divider {
+        margin-bottom: 20px;
+    }
+
+    .detail-list dt, .detail-list dd {
+        margin-bottom: 10px;
+    }
+
+    .detail-label {
+        font-weight: bold;
+        color: #555;
+    }
+
+    .detail-value {
+        color: #333;
+    }
+
+    .delete-form {
+        text-align: center;
+    }
+
+</style>

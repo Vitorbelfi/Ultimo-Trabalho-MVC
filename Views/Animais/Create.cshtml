@@ -1,0 +1,162 @@
+﻿@model ProjetoApi.Models.Animais
+
+@{
+    ViewData["Title"] = "Criar Animal";
+}
+
+<h1 class="page-title">@ViewData["Title"]</h1>
+
+<div class="form-container">
+    <h4 class="form-title">Animal</h4>
+    <hr class="form-divider" />
+    <form asp-action="Create">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        <div class="form-group">
+            <label asp-for="AnimalNome" class="control-label">Nome do Animal</label>
+            <input asp-for="AnimalNome" class="form-control" />
+            <span asp-validation-for="AnimalNome" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="AnimalRaca" class="control-label">Raça</label>
+            <input asp-for="AnimalRaca" class="form-control" />
+            <span asp-validation-for="AnimalRaca" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="AnimalTipo" class="control-label">Tipo</label>
+            <input asp-for="AnimalTipo" class="form-control" />
+            <span asp-validation-for="AnimalTipo" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="AnimalCor" class="control-label">Cor</label>
+            <input asp-for="AnimalCor" class="form-control" />
+            <span asp-validation-for="AnimalCor" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="AnimalSexo" class="control-label">Sexo</label>
+            <input asp-for="AnimalSexo" class="form-control" />
+            <span asp-validation-for="AnimalSexo" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="AnimalFoto" class="control-label">Foto (URL)</label>
+            <input asp-for="AnimalFoto" class="form-control" />
+            <span asp-validation-for="AnimalFoto" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="AnimalDtDesaparecimento" class="control-label">Data de Desaparecimento</label>
+            <input asp-for="AnimalDtDesaparecimento" class="form-control" />
+            <span asp-validation-for="AnimalDtDesaparecimento" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="AnimalDtEncontro" class="control-label">Data de Encontro</label>
+            <input asp-for="AnimalDtEncontro" class="form-control" />
+            <span asp-validation-for="AnimalDtEncontro" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="AnimalStatus" class="control-label">Status</label>
+            <input asp-for="AnimalStatus" class="form-control" />
+            <span asp-validation-for="AnimalStatus" class="text-danger"></span>
+        </div>
+        <div class="form-group">
+            <label asp-for="UsuarioId" class="control-label">ID do Usuário</label>
+            <select asp-for="UsuarioId" class="form-control" asp-items="ViewBag.UsuarioId"></select>
+        </div>
+        <div class="form-group text-center">
+            <button type="submit" class="btn btn-primary btn-create">Criar</button>
+        </div>
+    </form>
+    <div class="action-links">
+        <a asp-action="Index" class="btn btn-secondary">Voltar para a lista</a>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+<style>
+    .page-title {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 2em;
+        color: #333;
+    }
+
+    .form-container {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: auto;
+        width: 60%;
+    }
+
+    .btn-secondary {
+        width: 100%;
+    }
+
+
+    .form-title {
+        text-align: center;
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        color: #555;
+    }
+
+    .form-divider {
+        margin-bottom: 20px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .control-label {
+        font-weight: bold;
+        color: #555;
+    }
+
+    .form-control {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ced4da;
+        border-radius: 5px;
+        box-sizing: border-box;
+    }
+
+    .text-danger {
+        color: #dc3545;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        color: #fff;
+        width: 100%;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        color: #fff;
+    }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+
+    .text-center {
+        text-align: center;
+    }
+</style>

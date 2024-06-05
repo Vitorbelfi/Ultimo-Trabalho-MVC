@@ -1,0 +1,100 @@
+﻿@model IEnumerable<ProjetoApi.Models.Usuario>
+
+@{
+    ViewData["Title"] = "Lista de Usuarios";
+}
+
+<h1 class="page-title">@ViewData["Title"]</h1>
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            <a class="btn btn-primary mb-3" asp-action="Create">Criar novo Usuário</a>
+            <table class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Nome</th>
+                        <th>Email</th>
+                        <th>Telefone</th>
+                        <th>Senha</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>@Html.DisplayFor(modelItem => item.UsuarioNome)</td>
+                            <td>@Html.DisplayFor(modelItem => item.UsuarioEmail)</td>
+                            <td>@Html.DisplayFor(modelItem => item.UsuarioTelefone)</td>
+                            <td>@Html.DisplayFor(modelItem => item.UsuarioSenha)</td>
+                            <td>
+                                <a class="btn btn-sm btn-info" asp-action="Edit" asp-route-id="@item.Id">Editar</a>
+                                <a class="btn btn-sm btn-secondary" asp-action="Details" asp-route-id="@item.Id">Detalhes</a>
+                                <a class="btn btn-sm btn-danger" asp-action="Delete" asp-route-id="@item.Id">Excluir</a>
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+<style>
+    .page-title {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 2em;
+        color: #007bff;
+    }
+
+    .btn-info {
+        background-color: #007bff;
+        border-color: #007bff;
+        color: white;    
+    }
+
+        .btn-info:hover {
+            background-color: #0056b3;
+            border-color: #0056b3;
+            color: white;
+        }
+
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border-color: #6c757d;
+    }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+            border-color: #5a6268;
+        }
+
+     .btn-primary {
+         margin-left: 560px;
+     }
+
+    .btn-danger {
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+            border-color: #bd2130;
+        }
+
+    .table {
+        width: 90%;
+        margin: auto;
+        margin-bottom: 20px;
+        border-collapse: collapse;
+    }
+
+        .table th, .table td {
+            text-align: center;
+            padding: 10px;
+        }
+</style>

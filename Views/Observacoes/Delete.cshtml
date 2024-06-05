@@ -1,0 +1,146 @@
+﻿@model ProjetoApi.Models.Observacoes
+
+@{
+    ViewData["Title"] = "Excluir Observação";
+}
+
+<h1 class="page-title">@ViewData["Title"]</h1>
+
+<h3 class="confirm-message">Tem certeza que deseja excluir esta observação?</h3>
+<div class="confirmation-container">
+    <h4 class="form-title">Observações</h4>
+    <hr class="form-divider" />
+    <dl class="row detail-list">
+        <dt class="col-sm-2 detail-label">
+            @Html.DisplayNameFor(model => model.ObservacaoDescricao)
+        </dt>
+        <dd class="col-sm-10 detail-value">
+            @Html.DisplayFor(model => model.ObservacaoDescricao)
+        </dd>
+        <dt class="col-sm-2 detail-label">
+            @Html.DisplayNameFor(model => model.ObservacaoLocal)
+        </dt>
+        <dd class="col-sm-10 detail-value">
+            @Html.DisplayFor(model => model.ObservacaoLocal)
+        </dd>
+        <dt class="col-sm-2 detail-label">
+            @Html.DisplayNameFor(model => model.ObservacaoData)
+        </dt>
+        <dd class="col-sm-10 detail-value">
+            @Html.DisplayFor(model => model.ObservacaoData)
+        </dd>
+        <dt class="col-sm-2 detail-label">
+            @Html.DisplayNameFor(model => model.AnimalId)
+        </dt>
+        <dd class="col-sm-10 detail-value">
+            @Html.DisplayFor(model => model.AnimalId)
+        </dd>
+        <dt class="col-sm-2 detail-label">
+            @Html.DisplayNameFor(model => model.Usuario)
+        </dt>
+        <dd class="col-sm-10 detail-value">
+            @Html.DisplayFor(model => model.Usuario.Id)
+        </dd>
+    </dl>
+
+    <div class="text-center">
+        <form asp-action="Delete" class="form-group">
+            <input type="hidden" asp-for="Id" />
+            <button type="submit" class="btn btn-danger">Excluir</button>
+            <a asp-action="Index" class="btn btn-secondary">Voltar para a lista</a>
+        </form>
+    </div>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
+
+<style>
+    .page-title {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 2em;
+        color: #333;
+    }
+
+    .btn-danger {
+        width: 100%;
+        background-color: #dc3545;
+        color: #fff;
+    }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+        }
+
+    .btn-secondary {
+        margin-top: 10px;
+        width: 100%;
+        background-color: #6c757d;
+        color: #fff;
+    }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+
+    .text-center {
+        text-align: center;
+        margin-top: 20px;
+    }
+
+    .confirm-message {
+        text-align: center;
+        font-size: 1.25em;
+        margin-bottom: 20px;
+        color: #d9534f;
+    }
+
+    .confirmation-container {
+        background-color: #f9f9f9;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        margin: auto;
+        width: 60%;
+    }
+
+    .form-title {
+        text-align: center;
+        font-size: 1.5em;
+        margin-bottom: 10px;
+        color: #555;
+    }
+
+    .form-divider {
+        margin-bottom: 20px;
+    }
+
+    .detail-list dt, .detail-list dd {
+        margin-bottom: 10px;
+    }
+
+    .detail-label {
+        font-weight: bold;
+        color: #555;
+    }
+
+    .detail-value {
+        color: #333;
+    }
+
+    .delete-form {
+        text-align: center;
+    }
+
+    .btn-delete {
+        margin-right: 10px;
+    }
+
+    .btn-back {
+        margin-left: 10px;
+    }
+</style>
