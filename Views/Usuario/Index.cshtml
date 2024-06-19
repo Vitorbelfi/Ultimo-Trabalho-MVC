@@ -42,49 +42,65 @@
 </div>
 
 <style>
+    /* Definições Globais */
+
+    :root {
+        --primary-color: pink;
+        --secondary-color: #6c757d;
+        --danger-color: #dc3545;
+    }
+
+    /* Título da Página */
+
     .page-title {
         text-align: center;
         margin-bottom: 20px;
         font-size: 2em;
-        color: #007bff;
+        color: var(--primary-color);
+    }
+
+    /* Botões */
+
+    .btn {
+        border: none;
+        border-radius: 4px;
+        padding: 10px 20px;
+        cursor: pointer;
+        transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
     }
 
     .btn-info {
-        background-color: #007bff;
-        border-color: #007bff;
-        color: white;    
+        background-color: var(--primary-color);
+        color: white;
     }
 
         .btn-info:hover {
-            background-color: #0056b3;
-            border-color: #0056b3;
-            color: white;
+            background-color: red;
         }
 
-
     .btn-secondary {
-        background-color: #6c757d;
-        border-color: #6c757d;
+        background-color: var(--secondary-color);
+        color: white;
     }
 
         .btn-secondary:hover {
             background-color: #5a6268;
-            border-color: #5a6268;
         }
 
-     .btn-primary {
-         margin-left: 560px;
-     }
+    .btn-primary {
+        margin-left: 560px; /* Se ainda necessário */
+    }
 
     .btn-danger {
-        background-color: #dc3545;
-        border-color: #dc3545;
+        background-color: var(--danger-color);
+        color: white;
     }
 
         .btn-danger:hover {
             background-color: #c82333;
-            border-color: #bd2130;
         }
+
+    /* Tabelas */
 
     .table {
         width: 90%;
@@ -97,4 +113,5 @@
             text-align: center;
             padding: 10px;
         }
+
 </style>

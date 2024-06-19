@@ -7,7 +7,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<Contexto> //VITOR
-    (options => options.UseSqlServer("Data Source=SP-1491036\\SQLSENAI;Initial Catalog = ProjetoApi;Integrated Security = True;TrustServerCertificate = true"));
+    (options => options.UseSqlServer("Data Source=SP-1491026\\SQLSENAI;Initial Catalog = ProjetoApi;Integrated Security = True;TrustServerCertificate = true"));
 
 var app = builder.Build();
 

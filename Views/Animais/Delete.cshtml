@@ -58,68 +58,73 @@
 }
 
 <style>
+    :root {
+        --primary-color: pink;
+        --secondary-color: #6c757d;
+        --danger-color: #dc3545;
+    }
+
+    /* Título da Página */
+
     .page-title {
         text-align: center;
         margin-bottom: 20px;
         font-size: 2em;
-        color: #dc3545;
+        color: var(--primary-color);
     }
 
-    .page-subtitle {
-        text-align: center;
-        margin-bottom: 30px;
-        font-size: 1.5em;
-        color: #555;
-    }
-    .details-container {
-        background-color: #f9f9f9;
-        padding: 20px;
-        border-radius: 10px;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-        margin: auto;
-        width: 60%;
-    }
-
-    .row dt {
-        font-weight: bold;
-        color: #333;
-    }
-
-    .row dd {
-        margin-left: 0;
-    }
+    /* Botões */
 
     .btn {
-        padding: 10px 20px;
         border: none;
-        border-radius: 5px;
+        border-radius: 4px;
+        padding: 10px 20px;
         cursor: pointer;
-        font-size: 16px;
-        margin: 5px;
+        transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
     }
 
-    .btn-danger {
-        width:100%;
-        background-color: #dc3545;
-        color: #fff;
+    .btn-info {
+        background-color: var(--primary-color);
+        color: white;
     }
 
-        .btn-danger:hover {
-            background-color: #c82333;
+        .btn-info:hover {
+            background-color: red;
         }
 
     .btn-secondary {
-        width:100%;
-        background-color: #6c757d;
-        color: #fff;
+        background-color: var(--secondary-color);
+        color: white;
     }
 
         .btn-secondary:hover {
             background-color: #5a6268;
         }
 
-    .text-center {
-        text-align: center;
-        margin-top: 20px;
+    .btn-primary {
+        margin-left: 560px; /* Se ainda necessário */
     }
+
+    .btn-danger {
+        background-color: var(--danger-color);
+        color: white;
+    }
+
+        .btn-danger:hover {
+            background-color: #c82333;
+        }
+
+    /* Tabelas */
+
+    .table {
+        width: 90%;
+        margin: auto;
+        margin-bottom: 20px;
+        border-collapse: collapse;
+    }
+
+        .table th, .table td {
+            text-align: center;
+            padding: 10px;
+        }
 </style>
